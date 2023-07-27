@@ -13,8 +13,10 @@ let transformWord = "";
 
 
 if (userConfirm) {
+    userBid=0;
     wordsCounter = 3;
-    userBid = 0;
+
+
 
     while (userBid < wordsCounter && userWord1 === null || userWord1 === "") {
         userBid++;
@@ -34,24 +36,23 @@ if (userConfirm) {
            if (transformWord === `capitalize`) {
                userWord1 = userWord1[0].toUpperCase() + userWord1.slice(1);
            }
-           else {
-               console.log(`Error2`);
-               transformWord = console.log("Error2");
-           }
 
 
     }
 
+    userBid=0;
+    wordsCounter = 3;
 
-    while (userBid < wordsCounter && userWord2 === null || userWord2.trim() === "") {
+
+    while (userBid < wordsCounter && userWord2 === null || userWord2 === "") {
         userBid++;
-        userWord2 = prompt(` ${enterSecond}`);
-
+        userWord2 = prompt(`${enterSecond}`);
         if(userWord2===null||userWord2===``) {
             transformWord = console.log(`Error`);
         } else { console.log(`Correct`);
             transformWord = prompt("Pls choose your option uppercase||lowercase||capitalize ");
         };
+
         if (transformWord === `uppercase`) {
             userWord2 = userWord2.toUpperCase();
         }
@@ -61,26 +62,10 @@ if (userConfirm) {
         if (transformWord === `capitalize`) {
             userWord2 = userWord2[0].toUpperCase() + userWord2.slice(1);
         }
-    }
-    while (userBid < wordsCounter && userWord3 === null || userWord3 === "") {
-        userBid++;
-        userWord3 = prompt(` ${enterThird}`);
 
-        if(userWord3===null||userWord3===``) {
-            transformWord = console.log(`Error`);
-        } else { console.log(`Correct`);
-            transformWord = prompt("Pls choose your option uppercase||lowercase||capitalize ");
-        };
-        if (transformWord === `uppercase`) {
-            userWord1 = userWord3.toUpperCase();
-        }
-        if (transformWord === `lowercase`) {
-            userWord3 = userWord3.toLowerCase();
-        }
-        if (transformWord === `capitalize`) {
-            userWord3 = userWord3[0].toUpperCase() + userWord3.slice(1);
-        }
     }
+
+
 }
 sentance=`${userWord1} ${userWord2} ${userWord3} !`;
 console.log (sentance);
